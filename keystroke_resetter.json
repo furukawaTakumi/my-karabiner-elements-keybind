@@ -1,0 +1,57 @@
+{
+  "title": "キーストロークを失敗した場合に状態をリセットする設定",
+  "rules": [
+    {
+      "description": "プロジェクトメモを開くキーストロークの途中で失敗した場合に状態をリセットする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "any": "key_code"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "project_memo_open",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_unless",
+              "name": "project_memo_open",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "ウェブサイトを開くキーストロークの途中で失敗した場合に状態をリセットする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "any": "key_code"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "website_open",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_unless",
+              "name": "website_open",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

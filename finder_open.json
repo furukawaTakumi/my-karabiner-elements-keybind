@@ -1,0 +1,76 @@
+{
+  "title": "Finderを開くためのキーマップ",
+  "rules": [
+    {
+      "description": "dキーでダウンロードフォルダをオープンする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "finder_open",
+              "value": 100
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open /Users/hislab/Downloads"
+            },
+            {
+              "set_variable": {
+                "name": "finder_open",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "finderを開くための二つ目のキーストローク",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "finder_open",
+                "value": 100
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "application_open",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "finder_open",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

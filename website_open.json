@@ -1,0 +1,111 @@
+{
+  "title": "特定のウェブサイトを開くための設定（共通）",
+  "rules": [
+    {
+      "description": "特定のウェブサイトを開くための一つ目のキーストローク",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "website_open",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "website_open",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "google driveを開くための二つ目のキーストローク",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "optional": [
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "website_open",
+                "value": 100
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "website_open",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "website_open",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "dキーを押すことでgoogle driveページをオープンする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "website_open",
+              "value": 100
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open 'https://drive.google.com/drive/my-drive'"
+            },
+            {
+              "set_variable": {
+                "name": "website_open",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

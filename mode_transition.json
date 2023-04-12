@@ -1,0 +1,156 @@
+{
+  "title": "モード切り替えのキー割り当て",
+  "rules": [
+    {
+      "description": "right_optionを押しながらjキーを入力することによって日本語入力モードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 300
+              }
+            },
+            {
+              "key_code": "japanese_kana"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "right_optionキーを押しながらkキーを入力することで半角英数字入力モードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 400
+              }
+            },
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "right_optionでエディターモードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_option_clicked",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 100
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "right_option_clicked",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "left_optionを押すことによって状態フラグを立てる．なお，単体で押された場合にスペースを入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_option_pressed",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "left_option_pressed",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "エディターモードからgキーで選択モードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 200
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

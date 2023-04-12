@@ -1,0 +1,547 @@
+{
+  "title": "選択モードの設定",
+  "rules": [
+    {
+      "description": "選択モードでxを押すと切り取りしてエディターモードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 100
+              }
+            },
+            {
+              "key_code": "x",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "選択モードでcを押すとコピーしてエディターモードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 100
+              }
+            },
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "右に選択範囲を広げる一連の操作割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "command",
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "左に選択範囲を広げる一連の操作割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command",
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "上へ選択範囲を広げる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "下へ選択範囲を広げる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            },
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

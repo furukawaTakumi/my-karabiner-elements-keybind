@@ -1,0 +1,41 @@
+{
+  "title": "プロジェクトメモに関するコマンドの共通設定",
+  "rules": [
+    {
+      "description": "プロジェクトのメモを開く一つ目のキーストロークleftoption + h",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "project_memo_open",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "project_memo_open",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

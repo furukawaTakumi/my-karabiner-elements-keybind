@@ -1,0 +1,327 @@
+{
+  "title": "日本語入力モード",
+  "rules": [
+    {
+      "description": "left_optionを押しながらセミコロンを押した時，セミコロンを入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "semicolon"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "left_optionを押しながらコロンを押した時，コロンを入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "セミコロンキーをバックスペースに割り当てる",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "delete_or_backspace"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to_if_held_down": {
+            "key_code": "delete_or_backspace",
+            "repeat": true
+          }
+        }
+      ]
+    },
+    {
+      "description": "コロンキーをリターンキーに割り当てる",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "jとセミコロンキーの同時押しでタブを入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "j"
+              },
+              {
+                "key_code": "semicolon"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "tab"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらwを入力した時に『を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "open_bracket",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらeを入力した時に』を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらxを入力した時に（を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらcを入力した時に）を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "0",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらsを入力した時に「を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "open_bracket"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながらdを入力した時に」を入力する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 300
+            },
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

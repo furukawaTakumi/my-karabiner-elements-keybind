@@ -1,0 +1,325 @@
+{
+  "title": "アプリケーションのフォーカスを行う",
+  "rules": [
+    {
+      "description": "VSCodeにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Visual Studio Code - Insiders'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "sキーでgoogle chromeにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "cキーでカレンダーにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Calendar.app'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "wキーでwordにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Microsoft Word'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "tキーでチームズにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Microsoft Teams'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "nキーでNotionにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Notion'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "zキーでzoomにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'zoom.us'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "xキーでTerminalにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a Terminal.app"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "dキーでプレビューにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Adobe Acrobat Reader'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "kキーでkarabiner-elementsにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a Karabiner-Elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "vキーでkarabiner-elements-viewerにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a Karabiner-EventViewer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "pキーでpowerpointにフォーカスする",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "open -a 'Microsoft PowerPoint'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "アプリケーションにフォーカスするための一つ目のキーストロークleftoption + n",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "application_open",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "application_open",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "application_open",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

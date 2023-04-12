@@ -1,0 +1,170 @@
+{
+  "title": "chromeがフロントアプリケーションになっている時のキーバインド設定",
+  "rules": [
+    {
+      "description": "option_rightを押しながらiを入力した時にchromeでopen console panel",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "j",
+              "modifiers": [
+                "right_command",
+                "right_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらcを入力した時にchromeでopen elements panel",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "right_command",
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながら,を入力した時にchromeで前のタブを開く",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_command",
+                "right_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながら.を入力した時にchromeで次のタブを開くを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_command",
+                "right_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらrを入力した時にchromeでタブ検索を実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": [
+                "right_command",
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

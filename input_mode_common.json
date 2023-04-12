@@ -1,0 +1,159 @@
+{
+  "title": "入力モード共通操作",
+  "rules": [
+    {
+      "description": "option_leftを押しながらdを入力した時にundoを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": [
+                "right_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらfを入力した時にredoを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": [
+                "right_shift",
+                "right_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "right_optionキーを押しながら，quoteを入力した時にcommand enterに変換する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "right_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "right_optionキーを押しながら，semicolonを入力した時にcommand deleteに変換する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "right_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "right_optionキーを押しながら，tabを入力した時にescapeに変換する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "left_optionキーを押しながら，tabを入力した時にshift + tabに変換する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab"
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "right_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "title": "カーソル移動及び編集を行うエディターモード設定",
+  "rules": [
+    {
+      "description": "上へカーソル移動させる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            },
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "下へカーソル移動させる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            },
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "右へカーソル移動させる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            },
+            {
+              "key_code": "right_arrow"
+            },
+            {
+              "key_code": "right_arrow"
+            },
+            {
+              "key_code": "right_arrow"
+            },
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "左へカーソル移動させる一連のキー割り当て",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            },
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            },
+            {
+              "key_code": "left_arrow"
+            },
+            {
+              "key_code": "left_arrow"
+            },
+            {
+              "key_code": "left_arrow"
+            },
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "deleteキーとバックスペースのキーマップ設定",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "vキーでペースト",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 200
+            },
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            },
+            {
+              "type": "variable_if",
+              "name": "application_open",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "移動モードでcolonを押すとリターンキーを入力",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mode",
+              "value": 100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

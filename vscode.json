@@ -1,0 +1,376 @@
+{
+  "title": "vscodeがフロントに来ている時の便利ショートカット",
+  "rules": [
+    {
+      "description": "option_leftを押しながらdを入力した時にexplolerとトグルし，移動モードに切り替える．",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "right_shift",
+                "right_command"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 100
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらrを入力した時にvscodeのファイル名検索を開き，半角英数モードに移動する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "right_command"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 400
+              }
+            },
+            {
+              "set_variable": {
+                "name": "vscode_file_searcher",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながら,を入力した時にvscodeのグループ内で前のタブを開くを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": [
+                "right_command"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "right_command",
+                "right_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらaを入力した時にvscodeのグループ内で直前に開いたタブを開くを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_rightを押しながら.を入力した時にvscodeのグループ内で次のタブを開くを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": [
+                "right_command"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "right_command",
+                "right_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option_clicked",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらsを入力した時にvscodeの選択した項目を次の一致項目に追加するを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": [
+                "right_command"
+              ]
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "key_code": "japanese_eisuu"
+            },
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 400
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらwを入力した時にvscodeのソース管理を表示を実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "g",
+              "modifiers": [
+                "right_control",
+                "right_shift"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "mode",
+                "value": 100
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらvを入力した時にvscodeの変更をステージするを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": [
+                "right_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらcを入力した時にvscodeの変更のステージングを解除するを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "right_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "option_leftを押しながらxを入力した時にvscodeの変更の破棄をするを実行する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "right_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option_pressed",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode*"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
